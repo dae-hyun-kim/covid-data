@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { Cards, Chart, CountryPicker} from './components'
-import styles from './App.module.css'
 import { fetchData } from './api'
 
 class App extends React.Component {
@@ -22,11 +21,14 @@ class App extends React.Component {
   }
 
   render() {
-    const data = this.state.data
+    const data = this.state.data;
+    const confirmedData = data.confirmed
+    const recoveredData = data.recovered
+    const deathsData = data.deaths
     return (
       <div className="container">
         <div >
-          <Cards data={data}/>
+          <Cards confirmed={confirmedData} recovered={recoveredData} deaths={deathsData}/>
         </div>
         <CountryPicker/>
         <Chart/>
