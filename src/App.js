@@ -29,7 +29,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <div>
-          <Header/>
+          <Header lastUpdate={data.lastUpdate}/>
         </div>
         <div >
           <Cards confirmed={confirmedData} recovered={recoveredData} deaths={deathsData}/>
