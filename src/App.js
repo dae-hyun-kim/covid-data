@@ -24,8 +24,10 @@ class App extends React.Component {
   render() {
     const data = this.state.data
     return (
-      <div className={styles.container}>
-        <Cards data={data}/>
+      <div className="container">
+        <div >
+          <Cards data={data}/>
+        </div>
         <CountryPicker/>
         <Chart/>
       </div>
