@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Cards, Chart, CountryPicker} from './components'
 import { fetchData } from './api'
+import Header from './components/Header'
 
 class App extends React.Component {
   constructor(props) {
@@ -27,6 +28,9 @@ class App extends React.Component {
     const deathsData = data.deaths
     return (
       <div className="container">
+        <div>
+          <Header/>
+        </div>
         <div >
           <Cards confirmed={confirmedData} recovered={recoveredData} deaths={deathsData}/>
         </div>
