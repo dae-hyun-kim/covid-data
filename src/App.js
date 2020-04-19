@@ -23,8 +23,8 @@ class App extends React.Component {
 
   render() {
     const data = this.state.data;
-    const confirmedData = data.confirmed
-    const recoveredData = data.recovered
+    const confirmedData = data.confirmed;
+    const recoveredData = data.recovered;
     const deathsData = data.deaths
     return (
       <div className="container">
@@ -34,7 +34,6 @@ class App extends React.Component {
         <div >
           <Cards confirmed={confirmedData} recovered={recoveredData} deaths={deathsData}/>
         </div>
-        <CountryPicker/>
         <Chart/>
       </div>
     )
