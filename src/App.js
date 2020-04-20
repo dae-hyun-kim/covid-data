@@ -3,6 +3,7 @@ import React from 'react'
 import { Cards, Chart, CountryPicker} from './components'
 import { fetchData } from './api'
 import Header from './components/Header'
+import Search from './components/Search'
 
 class App extends React.Component {
   constructor(props) {
@@ -34,7 +35,13 @@ class App extends React.Component {
         <div >
           <Cards confirmed={confirmedData} recovered={recoveredData} deaths={deathsData}/>
         </div>
-        <Chart/>
+        <div>
+          <h2 className="headings text-center mt-5 mb-3">COVID-19 Global Cases</h2>
+          <Chart />
+        </div>
+        <div>
+          <Search/>
+        </div>
       </div>
     )
   }
