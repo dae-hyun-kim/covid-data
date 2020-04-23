@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { Cards, Chart, CountryPicker} from './components'
+import { Cards, Chart} from './components'
 import { fetchData } from './api'
 import Header from './components/Header'
-import Search from './components/Search'
+import News from './components/News'
 
 class App extends React.Component {
   constructor(props) {
@@ -40,7 +40,7 @@ class App extends React.Component {
           <Chart />
         </div>
         <div>
-          <Search/>
+          <News/>
         </div>
       </div>
     )
