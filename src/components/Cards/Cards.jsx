@@ -1,32 +1,30 @@
 import React from 'react'
+import CountUp from 'react-countup'
 
 const Cards = (props) => {
-  console.log(props.data)
-  return(
-    <div className="container d-flex justify-content-around">
-      <div className="card card-size text-center">
-        <div className="card-body">
-          <h5 className="card-title">Confirmed</h5>
-          <h6 className="card-subtitle mb-2 text-muted"># of Cases</h6>
-          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  const confirmed = props.confirmed;
+  const recovered = props.recovered;
+  const deaths = props.deaths;
+  if (!confirmed || !recovered || !deaths) {
+    return null
+  } else {
+    return (
+      <div className="container d-flex justify-content-around">
+        <div className="text-center">
+          <h2 className="headings heading-border">Confirmed</h2>
+          <h3 className="confirmed"><CountUp start={0} end={confirmed.value} duration={1.5} separator="," /></h3>
+        </div>
+        <div className="text-center">
+          <h2 className="headings heading-border">Recovered</h2>
+          <h3 className="recovered"><CountUp start={0} end={recovered.value} duration={1.5} separator="," /></h3>
+        </div>
+        <div className="text-center">
+          <h2 className="headings heading-border">Deaths</h2>
+          <h3 className="deaths"><CountUp start={0} end={deaths.value} duration={1.5} separator="," /></h3>
         </div>
       </div>
-      <div className="card card-size text-center">
-        <div className="card-body">
-          <h5 className="card-title">Recovered</h5>
-          <h6 className="card-subtitle mb-2 text-muted"># of Cases</h6>
-          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      <div className="card card-size text-center">
-        <div className="card-body">
-          <h5 className="card-title">Deaths</h5>
-          <h6 className="card-subtitle mb-2 text-muted"># of Cases</h6>
-          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default Cards;
