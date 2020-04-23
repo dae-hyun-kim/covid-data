@@ -1,5 +1,6 @@
 {
   "name": "covid-data",
+  "homepage": "http://covid-data.danny-dae-kim.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
