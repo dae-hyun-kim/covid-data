@@ -28,18 +28,20 @@ class App extends React.Component {
     const recoveredData = data.recovered;
     const deathsData = data.deaths
     return (
-      <div className="container">
-        <div>
-          <Header lastUpdate={data.lastUpdate}/>
+      <div>
+        <div className="container">
+          <div>
+            <Header lastUpdate={data.lastUpdate}/>
+          </div>
+          <div >
+            <Cards confirmed={confirmedData} recovered={recoveredData} deaths={deathsData}/>
+          </div>
+          <div>
+            <h2 className="headings text-center mt-5 mb-3">COVID-19 Global Cases</h2>
+            <Chart />
+          </div>
         </div>
-        <div >
-          <Cards confirmed={confirmedData} recovered={recoveredData} deaths={deathsData}/>
-        </div>
-        <div>
-          <h2 className="headings text-center mt-5 mb-3">COVID-19 Global Cases</h2>
-          <Chart />
-        </div>
-        <div>
+        <div className="d-flex">
           <News/>
         </div>
       </div>

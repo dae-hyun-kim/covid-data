@@ -11,7 +11,7 @@ export default class News extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=covid-19&api-key=uVpWajpaGqoyuFGJZRUW7WEGCtqbDhD6")
+    fetch("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=coronavirus-19&api-key=uVpWajpaGqoyuFGJZRUW7WEGCtqbDhD6")
     .then(response => {
       return response.json()
     })
@@ -26,7 +26,9 @@ export default class News extends React.Component {
     const articles = this.state.articles;
     const allArticles = articles.map((article, index) => {
       return(
-        <Article articleInfo={article} key={index}/>
+        <div key={index}>
+          <Article articleInfo={article}/>
+        </div>
       )
     })
     return allArticles
@@ -34,8 +36,10 @@ export default class News extends React.Component {
   render() {
     return (
       <div className="text-center mt-5 mb-5">
-        <h2 className="headings">COVID-19 Related News</h2>
-        {this.generateArticles()}
+        <h1 className="headings mb-5">COVID-19 Related News</h1>
+        <div className="d-flex flex-wrap justify-content-around">
+          {this.generateArticles()}
+        </div>
       </div>
     )
   }
